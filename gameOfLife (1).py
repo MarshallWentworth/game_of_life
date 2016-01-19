@@ -281,7 +281,8 @@ class Board:
         square dies if it is surrounded with less than 2 alive squares
         or more than 3 alive squares
         '''
-        self.get_square(col, row).flip_color()
+        if self.get_square(col, row).is_alive_or_dead():
+            self.get_square(col, row).flip_color()
 
     def revive_square(self, col, row): 
         '''
